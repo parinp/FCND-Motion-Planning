@@ -186,22 +186,16 @@ def prune_path(path,grid):
         cells = bresenham(p4[0],p4[1],p5[0],p5[1])
         if not in_collision(cells,grid):
             del pruned_path[j+1]
-#             del pruned_path[j+2]
         else:
-            j+=1
-            
+            j+=1   
     i=0
     while i < len(pruned_path)-2:
         p1=point(pruned_path[i])
         p2=point(pruned_path[i+1])
         p3=point(pruned_path[i+2])                   
-        
         if collinearity_check(p1,p2,p3):
             del pruned_path[i+1]
         else:
             i+=1
-    
     return pruned_path
 
-def own_bresen(x1,y1,x2,y2):
-    return True
