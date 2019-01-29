@@ -27,3 +27,6 @@ file = 'colliders.csv'
 
 
 ### Probabilistic Roadmap
+
+All of the relevant code is written in the file **motion_planning.py** and to make the programming less clustered, some of the functions are written in the file **planning_utils.py**.
+
