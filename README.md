@@ -2,7 +2,7 @@
 
 ## Objective: Path Planning
 
-The underlying objective of the given task in **README(Udacity).md** is to calculate the shortest path, in the form of waypoints, from a __starting position__ to a **goal location** while avoiding obstacles in the city which are provided in the form of a 'csv' file, **colliders.csv**  Using the  skills taught in the lesson, I have chosen and implemented 2 approaches:
+The underlying objective of the given task in [README(udacity).md](README(udacity).md) is to calculate the shortest path, in the form of waypoints, from a __starting position__ to a **goal location** while avoiding obstacles in the city which are provided in the form of a 'csv' file, [colliders.csv](colliders.csv)  Using the  skills taught in the lesson, I have chosen and implemented 2 approaches:
 
 **NOTE:** The following code is written in python 
 
@@ -11,7 +11,7 @@ The underlying objective of the given task in **README(Udacity).md** is to calcu
 
 ## 2D Grid Map
 
-All of the relevant code is written in the file **motion_planning.py** and to make the programming less clustered, some of the functions are written in the file **planning_utils.py**.
+All of the relevant code is written in the file [motion_planning.py](motion_planning.py) and to make the programming less clustered, some of the functions are written in the file [planning_utils.py](planning_utils.py).
 
 #### Setting Quadrotor Location
 
@@ -63,7 +63,7 @@ grid_goal = (int(grid_goal_l[0])-north_offset,int(grid_goal_l[1])-east_offset)
 
 #### Finding path
 
-**A Star** approach is used in order to find the shortest path from start to goal location with the help of normalization heuristic function.  More detail regarding these functions can be found in **planning_utils**, however; this approach creates multiple redundant waypoints where in a straight line, there are more than 2 waypoints making the quadrotor stop way too often than needed.
+**A Star** approach is used in order to find the shortest path from start to goal location with the help of normalization heuristic function.  More detail regarding these functions can be found in [planning_utils.py](planning_utils.py), however; this approach creates multiple redundant waypoints where in a straight line, there are more than 2 waypoints making the quadrotor stop way too often than needed.
 
 ```python
 
@@ -124,11 +124,11 @@ def prune_path(path,grid):
 
 ## Probabilistic Roadmap
 
-All of the relevant code is written in the file **motion_planning_prob.py** and to make the programming less clustered, some of the functions are written in the file **planning_utils_prob.py**.
+All of the relevant code is written in the file [motion_planning_prob.py](motion_planning_prob.py) and to make the programming less clustered, some of the functions are written in the file [planning_utils_prob.py](planning_utils_prob.py).
 
 #### Creating Polygons
 
-Similar to the [2D Grid Map](#2d-grid-map) the starting location is defined similarly but instead of creating a 2D Grid, polygons are created from the **colliders.csv** file.
+Similar to the [2D Grid Map](#2d-grid-map) the starting location is defined similarly but instead of creating a 2D Grid, polygons are created from the [colliders.csv](colliders.csv) file.
 
 ```python
   data = np.loadtxt('colliders.csv', delimiter=',', dtype='Float64', skiprows=2)
@@ -138,7 +138,7 @@ Similar to the [2D Grid Map](#2d-grid-map) the starting location is defined simi
 ```
 #### Feasible Points
 
-Next random positions in the spcified size of the map __colliders.csv__ are chosen and cross checked to determine whether the points are in colliding or within an obstacle to result in a dataset of only feasible points.
+Next random positions in the spcified size of the map [colliders.csv](colliders.csv) are chosen and cross checked to determine whether the points are in colliding or within an obstacle to result in a dataset of only feasible points.
 
 ```python
 
@@ -175,7 +175,7 @@ def Sample(data,Sample_Size,radius,tree,polygons):
 
 #### Generating Graph
 
-After acquiring multiple feasible points, a graph needs to be generated to determine the feasible pathways or connections between these points.  The user defined **can_connect** can be identified in the **planning_utils_prob.py** file.
+After acquiring multiple feasible points, a graph needs to be generated to determine the feasible pathways or connections between these points.  The user defined **can_connect** can be identified in the [planning_utils_prob.py](planning_utils_prob.py) file.
 
 ```python
 
@@ -214,3 +214,5 @@ Similar the [2D Grid Map](#2d-grid-map), **A Star** and **heuristic** approach i
   waypoints = [[int(p[0]), int(p[1]), TARGET_ALTITUDE, 0] for p in path]
         
 ```
+
+#### License
