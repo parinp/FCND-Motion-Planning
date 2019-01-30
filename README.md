@@ -216,3 +216,5 @@ Similar the [2D Grid Map](#2d-grid-map), **A Star** and **heuristic** approach i
 ```
 
 #### License
+
+This project is licensed under the [MIT License](LICENSE)
